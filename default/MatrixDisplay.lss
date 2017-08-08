@@ -297,7 +297,7 @@ ISR(TIMER0_OVF_vect)
 	{
 		isrMode=0;
  18e:	10 92 40 01 	sts	0x0140, r1
-		for(j=0;j<4;j++)
+		for(j=0;j<VERTICAL_COLUMNS;j++)
 			for(k=3;k>=0;k--)
 				SPI_MasterTransmit(~bitMapBuffer[((4*k+muxLine)*4)+j]);		
  192:	a0 91 41 01 	lds	r26, 0x0141
@@ -330,7 +330,7 @@ ISR(TIMER0_OVF_vect)
 	if(isrMode)
 	{
 		isrMode=0;
-		for(j=0;j<4;j++)
+		for(j=0;j<VERTICAL_COLUMNS;j++)
  1ba:	bc 01       	movw	r22, r24
  1bc:	63 5f       	subi	r22, 0xF3	; 243
  1be:	7f 4f       	sbci	r23, 0xFF	; 255
@@ -359,7 +359,7 @@ void SPI_MasterTransmit(char cData)
 	if(isrMode)
 	{
 		isrMode=0;
-		for(j=0;j<4;j++)
+		for(j=0;j<VERTICAL_COLUMNS;j++)
 			for(k=3;k>=0;k--)
  1d6:	e2 17       	cp	r30, r18
  1d8:	f3 07       	cpc	r31, r19
@@ -374,7 +374,7 @@ void SPI_MasterTransmit(char cData)
 	if(isrMode)
 	{
 		isrMode=0;
-		for(j=0;j<4;j++)
+		for(j=0;j<VERTICAL_COLUMNS;j++)
  1e6:	46 17       	cp	r20, r22
  1e8:	57 07       	cpc	r21, r23
  1ea:	21 f0       	breq	.+8      	; 0x1f4 <__vector_16+0x9c>

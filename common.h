@@ -21,7 +21,12 @@
 #define DD_MOSI		2
 #define DD_SCK		1
 
-#define BUFFER_SIZE	64
+
+#define NUMBER_OF_PANELS	1
+
+
+#define VERTICAL_COLUMNS	4*NUMBER_OF_PANELS
+#define BUFFER_SIZE			64*NUMBER_OF_PANELS
 
 /* Global Variables */
 

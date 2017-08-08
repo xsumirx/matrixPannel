@@ -93,7 +93,7 @@ ISR(TIMER0_OVF_vect)
 	if(isrMode)
 	{
 		isrMode=0;
-		for(j=0;j<4;j++)
+		for(j=0;j<VERTICAL_COLUMNS;j++)
 			for(k=3;k>=0;k--)
 				SPI_MasterTransmit(~bitMapBuffer[((4*k+muxLine)*4)+j]);		
 		mux_select(muxLine);
