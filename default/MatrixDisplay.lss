@@ -1,0 +1,450 @@
+
+MatrixDisplay.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000040  00800100  0000025c  000002f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000025c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000042  00800140  00800140  00000330  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  00000330  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000cf  00000000  00000000  00000370  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000267  00000000  00000000  0000043f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001a3  00000000  00000000  000006a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002da  00000000  00000000  00000849  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000080  00000000  00000000  00000b24  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000011f  00000000  00000000  00000ba4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000018  00000000  00000000  00000cc3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 ac 00 	jmp	0x158	; 0x158 <__vector_16>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ec e5       	ldi	r30, 0x5C	; 92
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 34       	cpi	r26, 0x40	; 64
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a0 e4       	ldi	r26, 0x40	; 64
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a2 38       	cpi	r26, 0x82	; 130
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 67 00 	call	0xce	; 0xce <main>
+  c6:	0c 94 2c 01 	jmp	0x258	; 0x258 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <main>:
+extern const uint8_t testBitmaps[64];
+
+int main(void)
+{
+	int i;
+	DDRB=0x17;
+  ce:	87 e1       	ldi	r24, 0x17	; 23
+  d0:	87 bb       	out	0x17, r24	; 23
+	DDRG=0x18;
+  d2:	88 e1       	ldi	r24, 0x18	; 24
+  d4:	80 93 64 00 	sts	0x0064, r24
+	DDRE=0x84;
+  d8:	84 e8       	ldi	r24, 0x84	; 132
+  da:	82 b9       	out	0x02, r24	; 2
+	PORTSET(PORTG,BIT4);
+  dc:	80 91 65 00 	lds	r24, 0x0065
+  e0:	80 61       	ori	r24, 0x10	; 16
+  e2:	80 93 65 00 	sts	0x0065, r24
+	SPI_MasterInit();
+  e6:	0e 94 87 00 	call	0x10e	; 0x10e <SPI_MasterInit>
+  ea:	20 e0       	ldi	r18, 0x00	; 0
+  ec:	30 e0       	ldi	r19, 0x00	; 0
+
+	for(i=0;i<64;i++)
+		bitMapBuffer[i]=testBitmaps[i];
+  ee:	f9 01       	movw	r30, r18
+  f0:	ee 5b       	subi	r30, 0xBE	; 190
+  f2:	fe 4f       	sbci	r31, 0xFE	; 254
+  f4:	d9 01       	movw	r26, r18
+  f6:	a0 50       	subi	r26, 0x00	; 0
+  f8:	bf 4f       	sbci	r27, 0xFF	; 255
+  fa:	8c 91       	ld	r24, X
+  fc:	80 83       	st	Z, r24
+	DDRG=0x18;
+	DDRE=0x84;
+	PORTSET(PORTG,BIT4);
+	SPI_MasterInit();
+
+	for(i=0;i<64;i++)
+  fe:	2f 5f       	subi	r18, 0xFF	; 255
+ 100:	3f 4f       	sbci	r19, 0xFF	; 255
+ 102:	20 34       	cpi	r18, 0x40	; 64
+ 104:	31 05       	cpc	r19, r1
+ 106:	99 f7       	brne	.-26     	; 0xee <main+0x20>
+		bitMapBuffer[i]=testBitmaps[i];
+
+	timer0Init();
+ 108:	0e 94 a3 00 	call	0x146	; 0x146 <timer0Init>
+ 10c:	ff cf       	rjmp	.-2      	; 0x10c <main+0x3e>
+
+0000010e <SPI_MasterInit>:
+int8_t isrMode=0,muxLine=0;
+
+void SPI_MasterInit(void)
+{
+	/* Set MOSI and SCK output, all others input */
+	DDR_SPI = (1<<DD_MOSI)|(1<<DD_SCK);
+ 10e:	86 e0       	ldi	r24, 0x06	; 6
+ 110:	88 bb       	out	0x18, r24	; 24
+	/* Enable SPI, Master, set clock rate fck/16 */
+	SPCR = 0x51; //(1<<SPE)|(1<<MSTR)|(1<<SPR0);
+ 112:	81 e5       	ldi	r24, 0x51	; 81
+ 114:	8d b9       	out	0x0d, r24	; 13
+}
+ 116:	08 95       	ret
+
+00000118 <SPI_MasterTransmit>:
+
+void SPI_MasterTransmit(char cData)
+{
+	/* Start transmission */
+	SPDR = cData;
+ 118:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+ 11a:	77 9b       	sbis	0x0e, 7	; 14
+ 11c:	fe cf       	rjmp	.-4      	; 0x11a <SPI_MasterTransmit+0x2>
+}
+ 11e:	08 95       	ret
+
+00000120 <mux_select>:
+
+void mux_select(char a)
+{
+	switch(a){
+ 120:	81 30       	cpi	r24, 0x01	; 1
+ 122:	39 f0       	breq	.+14     	; 0x132 <mux_select+0x12>
+ 124:	81 30       	cpi	r24, 0x01	; 1
+ 126:	60 f0       	brcs	.+24     	; 0x140 <mux_select+0x20>
+ 128:	82 30       	cpi	r24, 0x02	; 2
+ 12a:	29 f0       	breq	.+10     	; 0x136 <mux_select+0x16>
+ 12c:	83 30       	cpi	r24, 0x03	; 3
+ 12e:	41 f4       	brne	.+16     	; 0x140 <mux_select+0x20>
+ 130:	04 c0       	rjmp	.+8      	; 0x13a <mux_select+0x1a>
+		case 0:
+			PORTCLR(PORTE,BIT7);
+			PORTCLR(PORTB,BIT4);
+			break;
+		case 1:
+			PORTSET(PORTE,BIT7);
+ 132:	1f 9a       	sbi	0x03, 7	; 3
+ 134:	06 c0       	rjmp	.+12     	; 0x142 <mux_select+0x22>
+			PORTCLR(PORTB,BIT4);
+			break;
+		case 2:
+			PORTCLR(PORTE,BIT7);
+ 136:	1f 98       	cbi	0x03, 7	; 3
+ 138:	01 c0       	rjmp	.+2      	; 0x13c <mux_select+0x1c>
+			PORTSET(PORTB,BIT4);
+			break;
+		case 3:
+			PORTSET(PORTE,BIT7);
+ 13a:	1f 9a       	sbi	0x03, 7	; 3
+			PORTSET(PORTB,BIT4);
+ 13c:	c4 9a       	sbi	0x18, 4	; 24
+ 13e:	08 95       	ret
+			break;
+		default:
+			PORTCLR(PORTE,BIT7);
+ 140:	1f 98       	cbi	0x03, 7	; 3
+			PORTCLR(PORTB,BIT4);
+ 142:	c4 98       	cbi	0x18, 4	; 24
+ 144:	08 95       	ret
+
+00000146 <timer0Init>:
+
+
+void timer0Init(void)
+{
+    // enable timer overflow interrupt for both Timer0
+    TIMSK|=(1<<TOIE0);
+ 146:	87 b7       	in	r24, 0x37	; 55
+ 148:	81 60       	ori	r24, 0x01	; 1
+ 14a:	87 bf       	out	0x37, r24	; 55
+
+   	// set timer0 counter initial value to 0
+    TCNT0=0xb7;
+ 14c:	87 eb       	ldi	r24, 0xB7	; 183
+ 14e:	82 bf       	out	0x32, r24	; 50
+
+	// start timer0 with /128 prescaler
+    TCCR0 = (1<<CS02) | (1<<CS00);   
+ 150:	85 e0       	ldi	r24, 0x05	; 5
+ 152:	83 bf       	out	0x33, r24	; 51
+
+    // enable interrupts
+
+    sei();
+ 154:	78 94       	sei
+}
+ 156:	08 95       	ret
+
+00000158 <__vector_16>:
+
+ISR(TIMER0_OVF_vect) 
+{
+ 158:	1f 92       	push	r1
+ 15a:	0f 92       	push	r0
+ 15c:	0f b6       	in	r0, 0x3f	; 63
+ 15e:	0f 92       	push	r0
+ 160:	0b b6       	in	r0, 0x3b	; 59
+ 162:	0f 92       	push	r0
+ 164:	11 24       	eor	r1, r1
+ 166:	2f 93       	push	r18
+ 168:	3f 93       	push	r19
+ 16a:	4f 93       	push	r20
+ 16c:	5f 93       	push	r21
+ 16e:	6f 93       	push	r22
+ 170:	7f 93       	push	r23
+ 172:	8f 93       	push	r24
+ 174:	9f 93       	push	r25
+ 176:	af 93       	push	r26
+ 178:	bf 93       	push	r27
+ 17a:	ef 93       	push	r30
+ 17c:	ff 93       	push	r31
+	int8_t j,k;
+	// stop timer0
+	TCCR0 &= ~((1<<CS02) | (1<<CS00));
+ 17e:	83 b7       	in	r24, 0x33	; 51
+ 180:	8a 7f       	andi	r24, 0xFA	; 250
+ 182:	83 bf       	out	0x33, r24	; 51
+	if(isrMode)
+ 184:	80 91 40 01 	lds	r24, 0x0140
+ 188:	88 23       	and	r24, r24
+ 18a:	09 f4       	brne	.+2      	; 0x18e <__vector_16+0x36>
+ 18c:	46 c0       	rjmp	.+140    	; 0x21a <__vector_16+0xc2>
+	{
+		isrMode=0;
+ 18e:	10 92 40 01 	sts	0x0140, r1
+		for(j=0;j<4;j++)
+			for(k=3;k>=0;k--)
+				SPI_MasterTransmit(~bitMapBuffer[((4*k+muxLine)*4)+j]);		
+ 192:	a0 91 41 01 	lds	r26, 0x0141
+ 196:	8a 2f       	mov	r24, r26
+ 198:	99 27       	eor	r25, r25
+ 19a:	87 fd       	sbrc	r24, 7
+ 19c:	90 95       	com	r25
+ 19e:	0c 96       	adiw	r24, 0x0c	; 12
+ 1a0:	ac 01       	movw	r20, r24
+ 1a2:	44 0f       	add	r20, r20
+ 1a4:	55 1f       	adc	r21, r21
+ 1a6:	44 0f       	add	r20, r20
+ 1a8:	55 1f       	adc	r21, r21
+ 1aa:	0c 97       	sbiw	r24, 0x0c	; 12
+
+    sei();
+}
+
+ISR(TIMER0_OVF_vect) 
+{
+ 1ac:	9c 01       	movw	r18, r24
+ 1ae:	22 0f       	add	r18, r18
+ 1b0:	33 1f       	adc	r19, r19
+ 1b2:	22 0f       	add	r18, r18
+ 1b4:	33 1f       	adc	r19, r19
+ 1b6:	2e 5c       	subi	r18, 0xCE	; 206
+ 1b8:	3e 4f       	sbci	r19, 0xFE	; 254
+	// stop timer0
+	TCCR0 &= ~((1<<CS02) | (1<<CS00));
+	if(isrMode)
+	{
+		isrMode=0;
+		for(j=0;j<4;j++)
+ 1ba:	bc 01       	movw	r22, r24
+ 1bc:	63 5f       	subi	r22, 0xF3	; 243
+ 1be:	7f 4f       	sbci	r23, 0xFF	; 255
+ 1c0:	66 0f       	add	r22, r22
+ 1c2:	77 1f       	adc	r23, r23
+ 1c4:	66 0f       	add	r22, r22
+ 1c6:	77 1f       	adc	r23, r23
+ 1c8:	11 c0       	rjmp	.+34     	; 0x1ec <__vector_16+0x94>
+			for(k=3;k>=0;k--)
+				SPI_MasterTransmit(~bitMapBuffer[((4*k+muxLine)*4)+j]);		
+ 1ca:	80 81       	ld	r24, Z
+ 1cc:	80 95       	com	r24
+}
+
+void SPI_MasterTransmit(char cData)
+{
+	/* Start transmission */
+	SPDR = cData;
+ 1ce:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+ 1d0:	77 9b       	sbis	0x0e, 7	; 14
+ 1d2:	fe cf       	rjmp	.-4      	; 0x1d0 <__vector_16+0x78>
+ 1d4:	70 97       	sbiw	r30, 0x10	; 16
+	TCCR0 &= ~((1<<CS02) | (1<<CS00));
+	if(isrMode)
+	{
+		isrMode=0;
+		for(j=0;j<4;j++)
+			for(k=3;k>=0;k--)
+ 1d6:	e2 17       	cp	r30, r18
+ 1d8:	f3 07       	cpc	r31, r19
+ 1da:	b9 f7       	brne	.-18     	; 0x1ca <__vector_16+0x72>
+ 1dc:	4f 5f       	subi	r20, 0xFF	; 255
+ 1de:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1e0:	9f 01       	movw	r18, r30
+ 1e2:	2f 5f       	subi	r18, 0xFF	; 255
+ 1e4:	3f 4f       	sbci	r19, 0xFF	; 255
+	// stop timer0
+	TCCR0 &= ~((1<<CS02) | (1<<CS00));
+	if(isrMode)
+	{
+		isrMode=0;
+		for(j=0;j<4;j++)
+ 1e6:	46 17       	cp	r20, r22
+ 1e8:	57 07       	cpc	r21, r23
+ 1ea:	21 f0       	breq	.+8      	; 0x1f4 <__vector_16+0x9c>
+ 1ec:	fa 01       	movw	r30, r20
+ 1ee:	ee 5b       	subi	r30, 0xBE	; 190
+ 1f0:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1f2:	eb cf       	rjmp	.-42     	; 0x1ca <__vector_16+0x72>
+			for(k=3;k>=0;k--)
+				SPI_MasterTransmit(~bitMapBuffer[((4*k+muxLine)*4)+j]);		
+		mux_select(muxLine);
+ 1f4:	8a 2f       	mov	r24, r26
+ 1f6:	0e 94 90 00 	call	0x120	; 0x120 <mux_select>
+		muxLine++;
+ 1fa:	80 91 41 01 	lds	r24, 0x0141
+ 1fe:	8f 5f       	subi	r24, 0xFF	; 255
+ 200:	80 93 41 01 	sts	0x0141, r24
+		if(muxLine>3)
+ 204:	84 30       	cpi	r24, 0x04	; 4
+ 206:	14 f0       	brlt	.+4      	; 0x20c <__vector_16+0xb4>
+			muxLine=0;
+ 208:	10 92 41 01 	sts	0x0141, r1
+		PORTSET(PORTG,BIT3);
+ 20c:	80 91 65 00 	lds	r24, 0x0065
+ 210:	88 60       	ori	r24, 0x08	; 8
+ 212:	80 93 65 00 	sts	0x0065, r24
+  		TCNT0=0xfd;
+ 216:	8d ef       	ldi	r24, 0xFD	; 253
+ 218:	09 c0       	rjmp	.+18     	; 0x22c <__vector_16+0xd4>
+	}
+	else
+	{
+		isrMode=1;
+ 21a:	81 e0       	ldi	r24, 0x01	; 1
+ 21c:	80 93 40 01 	sts	0x0140, r24
+		PORTCLR(PORTG,BIT3);
+ 220:	80 91 65 00 	lds	r24, 0x0065
+ 224:	87 7f       	andi	r24, 0xF7	; 247
+ 226:	80 93 65 00 	sts	0x0065, r24
+		TCNT0=0xb7;
+ 22a:	87 eb       	ldi	r24, 0xB7	; 183
+ 22c:	82 bf       	out	0x32, r24	; 50
+	}
+
+	// start timer0 with /128 prescaler
+    TCCR0 = (1<<CS02) | (1<<CS00); 
+ 22e:	85 e0       	ldi	r24, 0x05	; 5
+ 230:	83 bf       	out	0x33, r24	; 51
+}
+ 232:	ff 91       	pop	r31
+ 234:	ef 91       	pop	r30
+ 236:	bf 91       	pop	r27
+ 238:	af 91       	pop	r26
+ 23a:	9f 91       	pop	r25
+ 23c:	8f 91       	pop	r24
+ 23e:	7f 91       	pop	r23
+ 240:	6f 91       	pop	r22
+ 242:	5f 91       	pop	r21
+ 244:	4f 91       	pop	r20
+ 246:	3f 91       	pop	r19
+ 248:	2f 91       	pop	r18
+ 24a:	0f 90       	pop	r0
+ 24c:	0b be       	out	0x3b, r0	; 59
+ 24e:	0f 90       	pop	r0
+ 250:	0f be       	out	0x3f, r0	; 63
+ 252:	0f 90       	pop	r0
+ 254:	1f 90       	pop	r1
+ 256:	18 95       	reti
+
+00000258 <_exit>:
+ 258:	f8 94       	cli
+
+0000025a <__stop_program>:
+ 25a:	ff cf       	rjmp	.-2      	; 0x25a <__stop_program>
